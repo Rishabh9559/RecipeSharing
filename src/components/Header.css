@@ -1,0 +1,150 @@
+a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .header {
+    display: flex;
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+  
+  .container1 {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+  }
+  
+  .home {
+    padding: 14px;
+    border: none;
+    background-color: rgb(55, 132, 39);
+    
+    border-radius: 9px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .category {
+    padding: 13px;
+    border: none;
+    background-color: rgb(55, 132, 39);;
+    /* background-color: rgba(43, 147, 22, 0.826); */
+    border-radius: 9px;
+    color: #ffffff;
+    /* font-weight: bold; */
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+  }
+  
+  .category-container {
+    position: relative;
+  }
+  
+  .menu {
+    align-items: center;
+    list-style-type: none;
+    border: 1px transparent;
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 10px;
+    width: 9vw; 
+  }
+  
+ 
+  .list {
+    padding: 8px;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .menu .list a{
+    padding: 6px;
+    align-items: center;
+  }
+  .menu .list :hover {
+    background-color: rgb(55, 132, 39);;
+    border-radius: 10px;
+    color: #ffffff;
+    
+   
+  }
+  
+  .search {
+    display: flex;
+    /* border: .5px solid; */
+    background-color: #817e7e24;
+    border-radius: 10px;
+  }
+  
+  .Inputsearch {
+    all: unset;
+    width: 40vw;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .btcSearch {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+   
+    
+  }
+
+  .btcSearch .svg {
+    fill: gray; 
+    width: 24px;
+    height: 24px; 
+  }
+ 
+  
+  .container2 {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: end;
+    justify-content: space-around;
+  }
+  
+  .Addrecipe {
+    padding: 10px;
+    /* font-weight: bold; */
+    border: 2px solid rgb(55, 132, 39);;
+    border-radius: 11px;
+    
+  }
+  
+  .profile_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor:pointer;
+   
+  }
+  
+  .user {
+    width: 22px;
+    height: 22px;
+  }
+  

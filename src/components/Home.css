@@ -1,0 +1,88 @@
+.HomeContainer{
+    /* margin-top: 80px  ; */
+    top:0;  
+    width: 100%;
+    /* border: 1px solid red; */
+ 
+    
+}
+.topRecipeTitle{
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 23px;
+    /* border:1px solid; */
+}
+
+.TopRecipeContainer{
+    justify-content: space-around;
+    display: flex;
+    gap:20px;
+    /* height: 27vh; */
+    /* border: 1px solid black; */
+    flex-wrap: wrap;
+    /* margin-bottom: 0px; */
+    /* margin-top: 100px; */
+}
+
+.TopRecipeImg{
+    height: 20vh;
+    /* border: 1px solid blueviolet; */
+    border-radius: 50%;
+    width: 10vw;
+    background-color: rgba(199, 200, 198, 0.322);
+    padding:5px;
+    /* position: relative; */
+}
+
+.TopRecipeImgHover{
+    /* position: relative; */
+    /* border:1px solid; */
+    text-align: center;
+    cursor: pointer;
+}
+
+.TopRecipeImgHover:hover{
+    opacity: 1;
+    background-color: rgb(255, 249, 249);
+    border-radius: 10%;
+}
+
+.TopRecipeName{
+
+}
+
+/* BreakfastSection  */
+
+.BreakfastSection{
+    /* border:1px solid blue; */
+    margin-top: 30px;   
+}
+
+.BreakfastSectionTitle{
+    font-size: 23px;
+    margin-left: 20px;
+    /* border: 1px solid; */
+    margin-bottom: 10px;
+}
+
+.BreakfastSectionImg{
+    display: flex;
+    justify-content: space-around;
+    gap:25px;
+    /* border: 1px solid blueviolet; */
+    flex-wrap: wrap;
+
+}
+.BreakfastImgContainer{
+    border: 2px solid rgba(187, 185, 185, 0.312);
+    border-radius: 16px;
+
+
+}
+.BreakfastSectionImgSize{
+    height: 35vh;
+    width:22vw;
+    padding: 5px;
+    /* border-radius: 50%; */
+}
