@@ -1,0 +1,41 @@
+.ShowContainer{
+    top:0;
+    margin-top: 100px;
+    width:100%;
+    margin-bottom: 50px;
+    justify-items: center;
+    
+}
+
+.RecipeName{
+    /* text-align: center; */
+    padding: 20px;
+    font-size: 24px;
+}
+
+.Recipe{
+    display: flex;
+    gap:30px;
+    padding: 10px;
+}
+
+.RecipeImg{
+    /* border:2px solid black; */
+    width: 30vw;
+    height: 50vh;
+}
+
+.RecipeIngredients{
+    /* border: 2px solid red; */
+}
+.RecipeIngredients ul {
+    /* border:2px solid black; */
+    list-style-type:none;
+    line-height: 23px;
+}
+
+.RecipeStep{
+    width: 50vw;
+    text-align: justify;
+    line-height: 23px;
+}

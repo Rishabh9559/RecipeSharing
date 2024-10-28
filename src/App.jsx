@@ -6,6 +6,10 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Footer from "./components/Footer";
+import Show from "./components/Show";
+import AddRecipe from "./components/AddRecipe";
+
+
 
 function App() {
 
@@ -13,7 +17,7 @@ function App() {
   return (
     <>
       <Header />
-      <Home/>
+      <Show/>
       <Footer/>
     </>
   );
