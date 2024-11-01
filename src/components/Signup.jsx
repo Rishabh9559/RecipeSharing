@@ -1,5 +1,7 @@
 import React from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
+
 const Signup = () => {
   return (
     <>
@@ -53,7 +55,7 @@ const Signup = () => {
             </form>
             <div className="alreadyAccound">
             Have an account? 
-            <a className="SinupPageLogin" href=""> Log in </a>
+            <Link to="Login" className="SinupPageLogin" > Log in </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import user from "../assets/user.svg";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuVisible, setMenuVisible] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
               <h3>RecipeSharing</h3>
             
           </div>
-          <a href="" className="home">Home</a>
+          <Link to="/" className="home">Home</Link>
           <div
             className="category-container"
             onMouseEnter={showMenu}
@@ -37,16 +38,16 @@ const Header = () => {
             {isMenuVisible && (
               <ul className="menu">
                 <li className="list">
-                  <a >Breakfast</a>
+                  <Link to="Food">Breakfast</Link>
                 </li>
                 <li className="list">
-                  <a>Lunch</a>
+                  <Link to="Food">Lunch</Link>
                 </li>
                 <li className="list">
-                  <a>Snack</a>
+                  <Link to="Food">Snack</Link>
                 </li>
                 <li className="list">
-                  <a>Dinner</a>
+                  <Link to="Food">Dinner</Link>
                 </li>
               </ul>
             )}
@@ -67,15 +68,16 @@ const Header = () => {
         </div>
 
         <div className="container2">
-          <a className="Addrecipe" href="">
+          <Link className="Addrecipe" to="AddRecipe">
             Add Recipe &#10009;
-          </a>
-          <a href="" className="profile_container">
-            <a className="profile" href="">
+          </Link>
+
+          <Link to="Signup" className="profile_container">
+            <p className="profile" to=" ">
               Profile
-            </a>
+            </p>
             <img className="user" src={user} alt="User" />
-          </a>
+          </Link>
         </div>
       </div>
     </>

@@ -1,15 +1,53 @@
 import React from "react";
 import { useState } from "react";
-// import {createBrowserRouter} from 'react-rute-dom'
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import Home from "./components/Home";
-import Show from "./components/Show";
-import AddRecipe from "./components/AddRecipe";
-import Lunch from "./components/Lunch";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/Home.jsx";
+import AddRecipe from "./components/AddRecipe.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import Show from "./components/Show.jsx";
+import Food from "./components/Food.jsx";
+import Root from "./Root.jsx";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+
+      {
+        path: "AddRecipe",
+        element: <AddRecipe />,
+      },
+      {
+        path: "Login",
+        element: <Login />,
+      },
+    
+
+      {
+        path: "Signup",
+        element: <Signup />,
+      },
+
+      {
+        path: "Show",
+        element: <Show />,
+      },
+      {
+        path: "Food",
+        element: <Food />,
+      },
+    ],
+  },
+]);
 
 
 function App() {
@@ -17,9 +55,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Home/>
-      <Footer/>
+     <RouterProvider router={router} />
+
     </>
   );
 }

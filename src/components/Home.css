@@ -2,6 +2,7 @@
     /* margin-top: 80px  ; */
     top:0;  
     width: 100%;
+    margin-bottom: 50px;
     /* border: 1px solid red; */
  
     
@@ -49,9 +50,7 @@
     border-radius: 10%;
 }
 
-.TopRecipeName{
 
-}
 
 /* BreakfastSection  */
 

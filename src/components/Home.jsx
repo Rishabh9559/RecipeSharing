@@ -2,6 +2,8 @@ import React from "react";
 import "./Home.css";
 import momo from "../assets/momo.png";
 import panir from "../assets/Panir.jpg";
+import { Link } from "react-router-dom";
+
 
 function Home() {
   return (
@@ -11,34 +13,34 @@ function Home() {
           <div className="topRecipeTitle">Top Recipe</div>
 
           <div className="TopRecipeContainer">
-            <a href="" className="TopRecipeImgHover">
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
-            <a href="" className="TopRecipeImgHover">
+            </Link>
+            <Link to="show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -47,135 +49,130 @@ function Home() {
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Breakfast Recipe</div>
           <div className="BreakfastSectionImg">
-            
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
 
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
           </div>
         </div>
-        
+
         {/* Lunch */}
 
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Lunch Recipe</div>
           <div className="BreakfastSectionImg">
-            
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
 
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
           </div>
         </div>
 
-{/* Snack */}
+        {/* Snack */}
 
-<div className="BreakfastSection">
+        <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Snack Recipe</div>
           <div className="BreakfastSectionImg">
-            
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
 
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
           </div>
         </div>
 
-{/* dinner */}
+        {/* dinner */}
 
-
-<div className="BreakfastSection">
+        <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Dinner Recipe</div>
           <div className="BreakfastSectionImg">
-            
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
 
-            <a href="" className="BreakfastImgContainer">
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
-            <a href="" className="BreakfastImgContainer">
+            </Link>
+            <Link to="show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

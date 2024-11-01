@@ -2,7 +2,7 @@ import React from 'react';
 import './Food.css';
 import panir from "../assets/Panir.jpg";
 
-const Lunch = () => {
+const Food = () => {
   return (
     <div className="breakfast-section">
       <h2 className="breakfast-section-title">Breakfast Recipes</h2>
@@ -18,4 +18,4 @@ const Lunch = () => {
   );
 }
 
-export default Lunch;
+export default Food;
