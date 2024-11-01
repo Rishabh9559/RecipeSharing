@@ -9,7 +9,7 @@ import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import Show from "./components/Show";
 import AddRecipe from "./components/AddRecipe";
-
+import Lunch from "./components/Lunch";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <Header />
-      <AddRecipe/>
+      <Lunch/>
       <Footer/>
     </>
   );

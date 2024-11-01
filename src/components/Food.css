@@ -1,0 +1,53 @@
+/* Food.css */
+
+.breakfast-section {
+    padding: 20px;
+    text-align: left;
+    top:0;
+    margin-top: 100px;
+  }
+  
+  .breakfast-section-title {
+    font-weight: bold;
+    margin-left: 30px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: rgba(204, 205, 203, 0.313);
+    padding: 5px;
+    border-radius: 12px;
+  }
+  
+  .breakfast-section-img {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    gap: 25px;
+    /* justify-content: center; */
+  }
+  
+  .breakfast-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%; /* Ensures a max of 4 items per row */
+    text-decoration: none;
+  }
+  
+  .breakfast-section-img-size {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    border:2px solid rgb(55, 132, 39);
+  }
+  
+  .breakfast-section-img-size:hover{
+    opacity: 0.8;
+    /* background-color: black; */
+  }
+  .breakfast-img-container p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+  

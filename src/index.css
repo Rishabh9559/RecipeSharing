@@ -1,3 +1,7 @@
 *{
     user-select: none;
+
+}
+textarea ,input:focus {
+    outline: none;
 }
