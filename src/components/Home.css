@@ -11,6 +11,7 @@
     margin-bottom: 10px;
     margin-left: 20px;
     font-size: 23px;
+
     /* border:1px solid; */
 }
 
@@ -63,6 +64,10 @@
     font-size: 23px;
     margin-left: 20px;
     /* border: 1px solid; */
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius:9px;
+    background-color: rgba(202, 201, 201, 0.334);
     margin-bottom: 10px;
 }
 
