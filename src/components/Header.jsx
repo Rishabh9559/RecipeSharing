@@ -38,16 +38,16 @@ const Header = () => {
             {isMenuVisible && (
               <ul className="menu">
                 <li className="list">
-                  <Link to="Food">Breakfast</Link>
+                  <Link to="/Food">Breakfast</Link>
                 </li>
                 <li className="list">
-                  <Link to="Food">Lunch</Link>
+                  <Link to="/Food">Lunch</Link>
                 </li>
                 <li className="list">
-                  <Link to="Food">Snack</Link>
+                  <Link to="/Food">Snack</Link>
                 </li>
                 <li className="list">
-                  <Link to="Food">Dinner</Link>
+                  <Link to="/Food">Dinner</Link>
                 </li>
               </ul>
             )}
@@ -68,11 +68,11 @@ const Header = () => {
         </div>
 
         <div className="container2">
-          <Link className="Addrecipe" to="AddRecipe">
+          <Link className="/Addrecipe" to="AddRecipe">
             Add Recipe &#10009;
           </Link>
 
-          <Link to="Signup" className="profile_container">
+          <Link to="/Signup" className="profile_container">
             <p className="profile" to=" ">
               Profile
             </p>

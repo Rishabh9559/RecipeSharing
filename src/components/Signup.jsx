@@ -55,7 +55,7 @@ const Signup = () => {
             </form>
             <div className="alreadyAccound">
             Have an account? 
-            <Link to="Login" className="SinupPageLogin" > Log in </Link>
+            <Link to="/Login" className="SinupPageLogin" > Log in </Link>
             </div>
           </div>
         </div>

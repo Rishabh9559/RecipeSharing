@@ -9,7 +9,7 @@ const Food = () => {
       <h2 className="breakfast-section-title">Breakfast Recipes</h2>
       <div className="breakfast-section-img">
         {[...Array(5)].map((_, index) => (
-          <Link key={index} to="Show" className="breakfast-img-container">
+          <Link key={index} to="/Show" className="breakfast-img-container">
             <img className="breakfast-section-img-size" src={panir}  />
             <p>Matar Paneer</p>
           </Link>

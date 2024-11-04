@@ -13,31 +13,31 @@ function Home() {
           <div className="topRecipeTitle">Top Recipe</div>
 
           <div className="TopRecipeContainer">
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
-            <Link to="show" className="TopRecipeImgHover">
+            <Link to="/show" className="TopRecipeImgHover">
               <img className="TopRecipeImg" src={momo} />
               <div className="TopRecipeName">Momo</div>
             </Link>
@@ -49,29 +49,29 @@ function Home() {
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Breakfast Recipe</div>
           <div className="BreakfastSectionImg">
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
 
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
           </div>
@@ -82,29 +82,29 @@ function Home() {
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Lunch Recipe</div>
           <div className="BreakfastSectionImg">
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
 
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
           </div>
@@ -115,29 +115,29 @@ function Home() {
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Snack Recipe</div>
           <div className="BreakfastSectionImg">
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
 
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
           </div>
@@ -148,29 +148,29 @@ function Home() {
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitle">Dinner Recipe</div>
           <div className="BreakfastSectionImg">
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
 
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
-            <Link to="show" className="BreakfastImgContainer">
+            <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
           </div>
