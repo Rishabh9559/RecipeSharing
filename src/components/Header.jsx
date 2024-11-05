@@ -68,7 +68,7 @@ const Header = () => {
         </div>
 
         <div className="container2">
-          <Link className="/Addrecipe" to="AddRecipe">
+          <Link className="Addrecipe" to="/AddRecipe">
             Add Recipe &#10009;
           </Link>
 
