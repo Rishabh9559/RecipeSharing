@@ -1,7 +1,29 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+
 import "./Footer.css";
 
 const Footer = () => {
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    // console.log(data);
+    setSuccessMessage("Query submitted successfully");
+    reset();
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 4000);
+    console.log(data);
+  };
+
   return (
     <>
       <div className=" footer">
@@ -32,13 +54,38 @@ const Footer = () => {
               <br />
               write us your complaints
             </div>
-            <form className="feedbackForm">
-              <input type="text" placeholder="Name" name="name" />
-              <input type="email" placeholder="Email address" />
-              <textarea type="text" placeholder="Message" />
-              <button className="feedbackSend" type="submit">
-                Send{" "}
-              </button>
+            <form className="feedbackForm" onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="text"
+                placeholder="Name"
+                {...register("name", { required: "Name is required" })}
+              />
+              {errors.name && <p className="error">{errors.name.message}</p>}
+              <input
+                type="email"
+                placeholder="Email address"
+                {...register("email", {
+                  required: "Email address is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+              />
+              {errors.email && <p className="error">{errors.email.message}</p>}
+              <textarea
+                type="text"
+                placeholder="Message"
+                {...register("message", { required: "Message is required" })}
+              />
+              {errors.message && (
+                <p className="error">{errors.message.message}</p>
+              )}
+              <input className="feedbackSend" type="submit" value="Submit" />
+
+              {successMessage && (
+                <p className="error">{successMessage}</p>
+              )}
             </form>
           </div>
         </div>

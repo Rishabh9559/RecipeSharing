@@ -1,5 +1,3 @@
-/* blue berry #173F4E */
-/*  #1B2625 */
 
 .footer{
     width:100%;
@@ -61,4 +59,8 @@
     cursor:pointer;
 }
 
-
+  
+  .error {
+    color: rgba(244, 44, 44, 0.82);
+    font-size: 12px;
+  }
