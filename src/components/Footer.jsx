@@ -14,15 +14,20 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
 
+
   const onSubmit = (data) => {
-    // console.log(data);
     setSuccessMessage("Query submitted successfully");
+    
     reset();
     setTimeout(() => {
       setSuccessMessage("");
-    }, 4000);
+    }, 3000);
     console.log(data);
   };
+
+// nodemailer
+
+
 
   return (
     <>
@@ -85,6 +90,7 @@ const Footer = () => {
 
               {successMessage && (
                 <p className="error">{successMessage}</p>
+                
               )}
             </form>
           </div>
@@ -92,6 +98,7 @@ const Footer = () => {
 
         <div className="copyright">© 2024 RecipeSharing All right reserved</div>
       </div>
+     
     </>
   );
 };
