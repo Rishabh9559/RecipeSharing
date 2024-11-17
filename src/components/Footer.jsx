@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 import "./Footer.css";
 
 const Footer = () => {
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -14,24 +14,43 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
 
+  const onSubmit = async (data) => {
+    try {
+        const response = await fetch("http://localhost:8080/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                to: "Rishabhkushwaha9559@gmail.com",
+                subject: `Feedback from ${data.name}`,
+                text: `Email: ${data.email}\nMessage: ${data.message}`,
+                html: `
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Email:</strong> ${data.email}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                `,
+            }),
+        });
 
-  const onSubmit = (data) => {
-    setSuccessMessage("Query submitted successfully");
-    
-    reset();
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 3000);
-    console.log(data);
-  };
-
-// nodemailer
-
+        const result = await response.json();
+        if (response.ok) {
+            setSuccessMessage("Your message has been sent successfully!");
+            reset();
+            setTimeout(() => setSuccessMessage(""), 3000);
+        } else {
+            throw new Error(result.error || "Failed to send email.");
+        }
+    } catch (error) {
+        setErrorMessage(`Error: ${error.message}`);
+        setTimeout(() => setErrorMessage(""), 3000);
+    }
+};
 
 
   return (
     <>
-      <div className=" footer">
+      <div className="footer">
         <div className="footerContainer">
           <div className="about">
             <div className="aboutUs">
@@ -57,7 +76,7 @@ const Footer = () => {
               Suggest and support us <br />
               to improve our site. <br />
               <br />
-              write us your complaints
+              Write us your complaints
             </div>
             <form className="feedbackForm" onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -88,17 +107,14 @@ const Footer = () => {
               )}
               <input className="feedbackSend" type="submit" value="Submit" />
 
-              {successMessage && (
-                <p className="error">{successMessage}</p>
-                
-              )}
+              {successMessage && <p className="success">{successMessage}</p>}
+              {errorMessage && <p className="error">{errorMessage}</p>}
             </form>
           </div>
         </div>
 
         <div className="copyright">© 2024 RecipeSharing All right reserved</div>
       </div>
-     
     </>
   );
 };

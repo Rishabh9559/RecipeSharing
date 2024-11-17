@@ -60,7 +60,17 @@
 }
 
   
-  .error {
+  /* .error {
     color: rgba(244, 44, 44, 0.82);
     font-size: 12px;
-  }
+  } */
+
+  .success {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
