@@ -1,8 +1,24 @@
 import React from "react";
+import { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Signup = () => {
+
+  const [Otp, setOtp] = useState(true)
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit=(data)=>{
+    console.log(data);
+  }
+
+
   return (
     <>
       <div className="main">
@@ -42,21 +58,31 @@ const Signup = () => {
             <div className="title">
               Recipe Sharing
             </div>
-            <form className=" loginForm">
-              <input className="loginInput" name="FirstName" type="text" placeholder="First Name"/>
-              <input className="loginInput" name='LastName' type='text' placeholder='Last Name'/>
-              <input className="loginInput" name="Email" type="email" placeholder="E-mail"/>
-              <input className="loginInput" name="Password" type="password" placeholder="Password"/>
-              <input className="loginInput" name="ConformPassword" type="text" placeholder="Conform Password"/>
-                <button className="SignUp" name="SignUp">
-                  Sign up
-                </button>
-             
-            </form>
-            <div className="alreadyAccound">
-            Have an account? 
-            <Link to="/Login" className="SinupPageLogin" > Log in </Link>
-            </div>
+            <form className=" loginForm" onClick={handleSubmit(onSubmit)} >
+              <input className="loginInput" type="text" placeholder="First Name"   />
+              <input className="loginInput"  type='text' placeholder='Last Name'   />
+              <input className="loginInput"  type="email" placeholder="E-mail"  />
+              <input className="loginInput"  type="password" placeholder="Password"  />
+              <input className="loginInput"  type="text" placeholder="Conform Password"    />
+              <input className="SignUp"  type="submit" value='Sign Up'  placeholder="Sign Up" />
+
+              {/* otp function */}
+              <div className="OTPBoxDOM">
+                <div className="OTPContainer">
+                  <label className="OTPlabel">OTP Verification </label>  <input className="loginInput" placeholder="Enter OTP"    />
+                </div>
+                <input className="Submit" type="submit" value="Submit"  />
+              </div>
+
+
+              <div className="PasswordLoginContaniner">
+               
+                <div className="alreadyAccound">
+                Have an account? 
+                <Link to="/Login" className="SinupPageLogin" > Log in </Link>
+                </div>
+              </div>
+          </form>
           </div>
         </div>
       </div>

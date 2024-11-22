@@ -53,14 +53,25 @@ const Login = () => {
               <button className="SignUp" name="SignUp">
                 Log in
               </button>
+               
+               {/* OTP system */}
+               <div className="OTPBoxDOM">
+                <div className="OTPContainer">
+                  <label className="OTPlabel">OTP Verification </label>  <input className="loginInput" placeholder="Enter OTP"    />
+                </div>
+                <input className="Submit" type="submit" value="Submit"  />
+               </div>
+
+                <div className="PasswordLoginContaniner">
+                  <Link  className="alreadyAccound"> Forgot Password </Link>
+                  <div className="alreadyAccound">
+                  Create an account? 
+                  <Link to="/SignUp" className="SinupPageLogin" > Sign Up </Link>
+                  </div>
+                </div>
+              
             </form>
-            <div className="alreadyAccound">
-              Don't have an account?
-              <Link to="/Signup" className="SinupPageLogin">
-                {" "}
-                Sign up{" "}
-              </Link>
-            </div>
+
           </div>
         </div>
       </div>

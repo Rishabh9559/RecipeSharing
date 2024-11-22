@@ -60,10 +60,10 @@
 }
 
 .title {
-    margin-top: 30px;
+    margin-top: 20px;
     font-weight: bold;
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .loginForm {
@@ -90,14 +90,48 @@
     border-radius: 10px;
     padding: 10px;
     color: white;
+    /* display: none; */
+}
+
+.Submit{
+    background-color: rgb(55, 132, 39);
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+    cursor:pointer;
+
+}
+.OTPBoxDOM{
+display: grid;
+display: none;
+
+}
+
+.OTPContainer{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.OTPlabel{
+    text-align: center;
+    padding:10px;
 }
 
 .alreadyAccound{
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 90px;
+    /* text-align: end; */
+    /* margin-top: 10px; */
+    /* margin-right: 90px; */
 }
 
 .SinupPageLogin{
     color: rgb(57, 118, 222);
+}
+
+.PasswordLoginContaniner{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 5px;
 }
