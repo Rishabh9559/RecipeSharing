@@ -4,7 +4,6 @@ import momo from "../assets/momo.png";
 import panir from "../assets/Panir.jpg";
 import { Link } from "react-router-dom";
 
-
 function Home() {
   return (
     <>
@@ -47,7 +46,10 @@ function Home() {
         {/* Brack Fast Recipes  */}
 
         <div className="BreakfastSection">
-          <div className="BreakfastSectionTitle">Breakfast Recipe</div>
+          <div className="BreakfastSectionTitleBox">
+            <div className=" BreakfastSectionTitle">Breakfast Recipe </div>
+            <Link className="SeeMore" to="/Food"> See More</Link>
+          </div>
           <div className="BreakfastSectionImg">
             <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
@@ -80,7 +82,10 @@ function Home() {
         {/* Lunch */}
 
         <div className="BreakfastSection">
-          <div className="BreakfastSectionTitle">Lunch Recipe</div>
+        <div className="BreakfastSectionTitleBox">
+            <div className=" BreakfastSectionTitle">Lunch Recipe </div>
+            <Link className="SeeMore" to="/Food"> See More</Link>
+          </div>          
           <div className="BreakfastSectionImg">
             <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
@@ -113,8 +118,10 @@ function Home() {
         {/* Snack */}
 
         <div className="BreakfastSection">
-          <div className="BreakfastSectionTitle">Snack Recipe</div>
-          <div className="BreakfastSectionImg">
+        <div className="BreakfastSectionTitleBox">
+            <div className=" BreakfastSectionTitle">Snack Recipe </div>
+            <Link className="SeeMore" to="/Food"> See More</Link>
+          </div>          <div className="BreakfastSectionImg">
             <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>
@@ -146,8 +153,10 @@ function Home() {
         {/* dinner */}
 
         <div className="BreakfastSection">
-          <div className="BreakfastSectionTitle">Dinner Recipe</div>
-          <div className="BreakfastSectionImg">
+        <div className="BreakfastSectionTitleBox">
+            <div className=" BreakfastSectionTitle">Dinner Recipe </div>
+            <Link className="SeeMore" to="/Food"> See More</Link>
+          </div>          <div className="BreakfastSectionImg">
             <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
             </Link>

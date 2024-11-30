@@ -64,7 +64,7 @@ const Login = () => {
 
                 <div className="PasswordLoginContaniner">
                   <Link  className="alreadyAccound"> Forgot Password </Link>
-                  <div className="alreadyAccound">
+                  <div >
                   Create an account? 
                   <Link to="/SignUp" className="SinupPageLogin" > Sign Up </Link>
                   </div>
