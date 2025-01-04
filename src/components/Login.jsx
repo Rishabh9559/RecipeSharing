@@ -1,8 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+
+  const [Otp, setOtp] = useState(true)
+
+  const {register,handleSubmit,formState:{errors}} =useForm();
+
+  const onSubmit=(data)=>{
+    console.log(data);
+  }
+
+
   return (
     <>
       <div className="main">
@@ -37,22 +49,25 @@ const Login = () => {
         <div className="login_container ">
           <div className="login">
             <div className="title">Recipe Sharing</div>
-            <form className=" loginForm">
+            <form className=" loginForm" onSubmit={handleSubmit(onSubmit)}>
               <input
                 className="loginInput"
                 name="Email"
                 type="email"
                 placeholder="E-mail"
+                {...register("Email", {required:"Email required",pattern: {value: /^\S+@\S+$/i, message: "Invalid email address", } })}
               />
+              {errors.Email && <p className="signupError">{errors.Email.message} </p>}
               <input
                 className="loginInput"
                 name="Password"
                 type="password"
                 placeholder="Password"
+                {...register("Password",{required:"Password required"})}
               />
-              <button className="SignUp" name="SignUp">
-                Log in
-              </button>
+              {errors.Password && <p className="signupError"> {errors.Password.message} </p>}
+              <input type="submit" className="SignUp" placeholder="Login" onClick={handleSubmit(onSubmit)} />
+
                
                {/* OTP system */}
                <div className="OTPBoxDOM">

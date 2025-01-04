@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import "./Footer.css";
 
 const Footer = () => {
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState(""); 
   const [errorMessage, setErrorMessage] = useState("");
 
   const {
@@ -41,7 +41,8 @@ const Footer = () => {
         } else {
             throw new Error(result.error || "Failed to send email.");
         }
-    } catch (error) {
+    }
+    catch (error) {
         setErrorMessage(`Error: ${error.message}`);
         setTimeout(() => setErrorMessage(""), 3000);
     }
@@ -78,6 +79,7 @@ const Footer = () => {
               <br />
               Write us your complaints
             </div>
+            
             <form className="feedbackForm" onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="text"

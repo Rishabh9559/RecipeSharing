@@ -104,3 +104,10 @@
     background-color: rgb(55, 132, 39);
   }
   
+  .AddRecipeError{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: smaller;
+    color: red;
+}
