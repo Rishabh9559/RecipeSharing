@@ -1,19 +1,83 @@
 import React from "react";
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [ForgotPasswordForm, setForgotPasswordForm] = useState(false);
+  let [ForgotPassword, setForgotPassword] = useState("");
+  let [ForgotPasswordError, setForgotPasswordError] = useState("");
+  const [LoginForm, setLoginForm] = useState(true);
+  const [LoginError, setLoginError] = useState("");
 
-  const [Otp, setOtp] = useState(true)
+  let {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const {register,handleSubmit,formState:{errors}} =useForm();
-
-  const onSubmit=(data)=>{
+  let onSubmit = async (data) => {
     console.log(data);
-  }
+    try {
+      const LoginResponse = await fetch("http://localhost:8080/Login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          Email: watch("Email", ""),
+          Password: watch("Password", ""),
+        }),
+      });
+      const ResultLoginResponse = await LoginResponse.json();
+      if (LoginResponse.ok) {
+        console.log("login done", ResultLoginResponse.message);
+        navigate("/");
+      } else {
+        console.log(ResultLoginResponse.message);
+        setLoginError(ResultLoginResponse.message);
+      }
+    } catch (error) {
+      console.log("login server", error);
+    }
+  };
 
+  const onForgotPassword = () => {
+    setLoginForm(false);
+    setForgotPasswordForm(true);
+  };
+
+  const onForgotInputValue = async (event) => {
+    setForgotPassword(event.target.value);
+  };
+  const onForgotPasswordForm =async () => {
+    console.log(ForgotPassword);
+    try{
+      const ForgotPasswordResponse= await fetch("http://localhost:8080/ForgotPassword" , {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          Email: ForgotPassword,
+        }),
+      })
+
+      const ResultForgotdResponse= await ForgotPasswordResponse.json();
+      if(ForgotPasswordResponse.ok){
+        console.log(ResultForgotdResponse.message);
+        setForgotPasswordError(ResultForgotdResponse.message);
+
+      }
+      else{
+        console.log(ResultForgotdResponse.message);
+        setForgotPasswordError(ResultForgotdResponse.message);
+
+      }
+    }
+    catch(error){
+      console.log("Forgot passsword ", error);
+    }
+  };
 
   return (
     <>
@@ -49,44 +113,83 @@ const Login = () => {
         <div className="login_container ">
           <div className="login">
             <div className="title">Recipe Sharing</div>
-            <form className=" loginForm" onSubmit={handleSubmit(onSubmit)}>
-              <input
-                className="loginInput"
-                name="Email"
-                type="email"
-                placeholder="E-mail"
-                {...register("Email", {required:"Email required",pattern: {value: /^\S+@\S+$/i, message: "Invalid email address", } })}
-              />
-              {errors.Email && <p className="signupError">{errors.Email.message} </p>}
-              <input
-                className="loginInput"
-                name="Password"
-                type="password"
-                placeholder="Password"
-                {...register("Password",{required:"Password required"})}
-              />
-              {errors.Password && <p className="signupError"> {errors.Password.message} </p>}
-              <input type="submit" className="SignUp" placeholder="Login" onClick={handleSubmit(onSubmit)} />
-
-               
-               {/* OTP system */}
-               <div className="OTPBoxDOM">
-                <div className="OTPContainer">
-                  <label className="OTPlabel">OTP Verification </label>  <input className="loginInput" placeholder="Enter OTP"    />
-                </div>
-                <input className="Submit" type="submit" value="Submit"  />
-               </div>
-
+            {LoginForm && (
+              <form className=" loginForm" onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  className="loginInput"
+                  name="Email"
+                  type="email"
+                  placeholder="E-mail"
+                  {...register("Email", {
+                    required: "Email required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
+                />
+                {errors.Email && (
+                  <p className="signupError">{errors.Email.message} </p>
+                )}
+                <input
+                  className="loginInput"
+                  name="Password"
+                  type="password"
+                  placeholder="Password"
+                  {...register("Password", { required: "Password required" })}
+                />
+                {errors.Password && (
+                  <p className="signupError"> {errors.Password.message} </p>
+                )}
+                <input
+                  type="submit"
+                  className="SignUp"
+                  placeholder="Login"
+                  onClick={handleSubmit(onSubmit)}
+                />
+                {LoginError && <p className="signupError"> {LoginError} </p>}
                 <div className="PasswordLoginContaniner">
-                  <Link  className="alreadyAccound"> Forgot Password </Link>
-                  <div >
-                  Create an account? 
-                  <Link to="/SignUp" className="SinupPageLogin" > Sign Up </Link>
+                  <div className="alreadyAccound" onClick={onForgotPassword}>
+                    {" "}
+                    Forgot Password{" "}
+                  </div>
+                  <div>
+                    Create an account?
+                    <Link to="/SignUp" className="SinupPageLogin">
+                      {" "}
+                      Sign Up{" "}
+                    </Link>
                   </div>
                 </div>
-              
-            </form>
+              </form>
+            )}
 
+            {/* Forgot password */}
+            {ForgotPasswordForm && (
+              <div className="loginForm">
+                <p>
+                  {" "}
+                  Enter the Email ID and Password will be send on your Mail.{" "}
+                </p>
+
+                <div className="OTPContainer">
+                  <label className="OTPlabel">E-mail ID </label>{" "}
+                  <input
+                    className="loginInput"
+                    placeholder="Enter Email ID"
+                    value={ForgotPassword}
+                    onChange={onForgotInputValue}
+                  />
+                </div>
+                <input
+                  className="Submit"
+                  type="submit"
+                  placeholder="Submit"
+                  onClick={onForgotPasswordForm}
+                />
+                {ForgotPasswordError && <p className="signupError" > {ForgotPasswordError} </p>}
+              </div>
+            )}
           </div>
         </div>
       </div>

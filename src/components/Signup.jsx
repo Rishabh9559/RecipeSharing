@@ -1,13 +1,18 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import "./Login.css";
 
 const Signup = () => {
-  const [Otp, setOtp] = useState(true);
+  const navigate = useNavigate();
+  let [SignupForm,setSignupForm]=useState(true);
+    let [errorSignup,setErrorSignup]=useState("");
+  let [otpForm,setOtpForm]=useState(false);
+  let [otpInputValue,setOtpInputValue]=useState("");
+  let [otp,setOtp]=useState("");
 
-  const {
+  let {
     register,
     handleSubmit,
     watch,
@@ -17,7 +22,7 @@ const Signup = () => {
   const Password = useRef({});
   Password.current = watch("Password", "");
 
-  const onSubmit = async (data) => {
+  let onSubmit = async (data) => {
     console.log(data);
 
     try {
@@ -30,15 +35,38 @@ const Signup = () => {
           Email: watch("Email", ""),
           Password: watch("Password", ""),
         }),
+        
       });
 
       const ResultSignUpResponse =await SignUpResponse.json();
-      if(ResultSignUpResponse.ok){
-        
+      if(SignUpResponse.ok){
+          console.log( " SignUp done ");
+          console.log(ResultSignUpResponse.message)
+          setOtp(ResultSignUpResponse.message);
+          console.log(otp);
+          setSignupForm(false);
+          setOtpForm(true);
+      }
+      else{
+          console.log(ResultSignUpResponse.message)
+          setErrorSignup(ResultSignUpResponse.message);
       }
 
     } catch (error) {
       console.log("SignUp error :", error);
+    }
+  };
+
+  let onClickOTP= (event)=>{
+    
+    setOtpInputValue(event.target.value);
+    
+  }
+
+  let OTPSubmit = () => {
+    if (otpInputValue === otp) {
+      console.log(`Otp input: ${otpInputValue} and mail OTP: ${otp}`);
+      navigate("/Login");
     }
   };
 
@@ -78,7 +106,7 @@ const Signup = () => {
           <div className="login">
             <div className="title">Recipe Sharing</div>
 
-            <form className=" loginForm" onSubmit={handleSubmit(onSubmit)}>
+         {SignupForm&& <form className=" loginForm" onSubmit={handleSubmit(onSubmit)}>
               <input
                 className="loginInput"
                 type="text"
@@ -141,17 +169,10 @@ const Signup = () => {
                 type="submit"
                 value="Sign Up"
                 placeholder="Sign Up"
-                onClick={handleSubmit(onSubmit)}
+                
+                
               />
-
-              {/* otp function */}
-              <div className="OTPBoxDOM">
-                <div className="OTPContainer">
-                  <label className="OTPlabel">OTP Verification </label>{" "}
-                  <input className="loginInput" placeholder="Enter OTP" />
-                </div>
-                <input className="Submit" type="submit" value="Submit" />
-              </div>
+              {errorSignup && <p className="signupError"> {errorSignup} </p>}
 
               <div className="PasswordLoginContaniner">
                 <div className="alreadyAccound">
@@ -162,7 +183,19 @@ const Signup = () => {
                   </Link>
                 </div>
               </div>
-            </form>
+            </form> }
+
+              {/* otp function */}
+          {otpForm &&   <div className=" loginForm"  >  
+              <div className="OTPBoxDOM">
+                <div className="OTPContainer">
+                  <label className="OTPlabel">OTP Verification </label>
+                  <input className="loginInput" placeholder="Enter OTP" value={otpInputValue} onChange={onClickOTP}    />
+                </div>
+                <input className="Submit" type="submit" placeholder="Submit" onClick={OTPSubmit}  />
+              </div>
+            </div> }
+
           </div>
         </div>
       </div>

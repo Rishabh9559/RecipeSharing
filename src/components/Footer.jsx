@@ -7,14 +7,14 @@ const Footer = () => {
   const [successMessage, setSuccessMessage] = useState(""); 
   const [errorMessage, setErrorMessage] = useState("");
 
-  const {
+  let {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  let onSubmit = async (data) => {
     try {
         const response = await fetch("http://localhost:8080/send-email", {
             method: "POST",
