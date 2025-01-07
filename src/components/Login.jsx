@@ -187,7 +187,7 @@ const Login = () => {
                   placeholder="Submit"
                   onClick={onForgotPasswordForm}
                 />
-                {ForgotPasswordError && <p className="signupError" > {ForgotPasswordError} </p>}
+                {ForgotPasswordError && <p className="resolve" > {ForgotPasswordError} </p>}
               </div>
             )}
           </div>

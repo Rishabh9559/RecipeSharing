@@ -109,7 +109,7 @@ const Footer = () => {
               )}
               <input className="feedbackSend" type="submit" value="Submit" />
 
-              {successMessage && <p className="success">{successMessage}</p>}
+              {successMessage && <p className="resolve">{successMessage}</p>}
               {errorMessage && <p className="error">{errorMessage}</p>}
             </form>
           </div>

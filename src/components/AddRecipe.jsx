@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
+import { v2 as cloudinary } from 'cloudinary';
 import './AddRecipe.css';
 import { useForm } from 'react-hook-form';
 
@@ -7,6 +8,7 @@ import { useForm } from 'react-hook-form';
 const AddRecipe = () => {
 
   const {register,watch,handleSubmit,formState:{errors}, }=useForm();
+  let [AddRecipeError,setAddRecipeError]=useState("");
 
   const SelectCategory=watch("Category","");
   const imgfile=watch("UploadImage","");
@@ -19,8 +21,36 @@ const AddRecipe = () => {
     }
   }, [watchFile]);
 
-  const onSubmit=(data)=>{
+  // image url fetching
+
+
+
+
+
+  const onSubmit=async (data)=>{
       console.log(data);
+      let imgUrl=watch("UploadImage");
+      console.log(imgUrl[0].name)
+    const AddRecipeResponse= await fetch(" http://localhost:8080/Add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        RecipeName: watch("RecipeName"),
+        Category:watch("Category"),
+        Imageurl:imgUrl[0].name,
+        Ingredients:watch("Ingredients"),
+        Instructions:watch("Instructions"),
+      }),
+    });
+
+    const AddRecipeResponseResult= await AddRecipeResponse.json();
+    if(AddRecipeResponse.ok){
+      setAddRecipeError(AddRecipeResponseResult.message);
+    }
+    else{
+      setAddRecipeError(AddRecipeResponseResult.message);
+    }
+
   }
 
 
@@ -35,7 +65,7 @@ const AddRecipe = () => {
         <div className="recipe-box">
           <label>Recipe Name</label>
           <input className="input-box" placeholder="Enter Recipe Name" type="text"  {...register("RecipeName",{required:"Enter Recipe Name"} )} />
-          {errors.RecipeName && <p className='AddRecipeError'> {errors.RecipeName.message} </p>}         
+          {errors.RecipeName && <p className='error'> {errors.RecipeName.message} </p>}         
         </div>
 
         <div className="recipe-box">
@@ -47,7 +77,7 @@ const AddRecipe = () => {
             <option value="Snack">Snack</option>
             <option value="Dinner">Dinner</option>
           </select>
-          {errors.Category && <p className='AddRecipeError'> {errors.Category.message} </p>}
+          {errors.Category && <p className='error'> {errors.Category.message} </p>}
         </div>
 
         <div className="recipe-box image-upload-box">
@@ -65,13 +95,13 @@ const AddRecipe = () => {
 
           />
            {filePreview &&  <img className="recipe-img" src={filePreview} alt="Uploaded Recipe"   />   }
-           {errors.UploadImage && <p className='AddRecipeError'> {errors.UploadImage.message} </p>}
+           {errors.UploadImage && <p className='error'> {errors.UploadImage.message} </p>}
         </div>
 
         <div className="recipe-box">
           <label>Ingredients</label>
           <textarea className="input-box" placeholder="List ingredients here" {...register("Ingredients",{required:"List ingredients here"})}    />
-          {errors.Ingredients && <p className='AddRecipeError'> {errors.Ingredients.message} </p>}
+          {errors.Ingredients && <p className='error'> {errors.Ingredients.message} </p>}
         </div>
 
         <div className="recipe-box">
@@ -81,10 +111,11 @@ const AddRecipe = () => {
             placeholder="Describe cooking steps"
            {...register("Instructions",{required:"Write cooking steps"})}
           />
-          {errors.Instructions && <p className='AddRecipeError'> {errors.Instructions.message} </p>}
+          {errors.Instructions && <p className='error'> {errors.Instructions.message} </p>}
         </div>
 
         <input type="submit" className="submit-button" placeholder='Submit Recipe' onClick={handleSubmit(onSubmit)} />
+        { AddRecipeError && <p className='resolve'> {AddRecipeError} </p>}
       </form>
 
     </div>
