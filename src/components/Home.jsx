@@ -89,29 +89,10 @@ function Home() {
           <div className="BreakfastSectionImg">
             <Link to="/show" className="BreakfastImgContainer">
               <img className="BreakfastSectionImgSize" src={panir} />
+              <p className="RecipeName"> Panir </p>
             </Link>
 
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
+            
           </div>
         </div>
 

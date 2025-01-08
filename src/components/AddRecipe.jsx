@@ -1,10 +1,13 @@
 import { useState } from "react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./AddRecipe.css";
 import { useForm } from "react-hook-form";
 import { supabase } from "../supabaseClient.js";
 
 const AddRecipe = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     watch,
@@ -15,19 +18,18 @@ const AddRecipe = () => {
   const [image, setImage] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   let [url, setUrl] = useState("");
-  const [imageError, setImageError] = useState(""); 
+  const [imageError, setImageError] = useState("");
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setImage(file);
       setFilePreview(URL.createObjectURL(file));
-      setImageError("");  
+      setImageError("");
     }
   };
 
   const onSubmit = async (data) => {
-   
     if (!image) {
       setImageError("Please select an image before submitting.");
       return;
@@ -53,14 +55,13 @@ const AddRecipe = () => {
 
       const imageUrl = publicUrlData.publicUrl;
 
-     
       const AddRecipeResponse = await fetch("http://localhost:8080/Add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           RecipeName: watch("RecipeName"),
           Category: watch("Category"),
-          Imageurl: imageUrl, 
+          Imageurl: imageUrl,
           Ingredients: watch("Ingredients"),
           Instructions: watch("Instructions"),
         }),
@@ -69,6 +70,9 @@ const AddRecipe = () => {
       const AddRecipeResponseResult = await AddRecipeResponse.json();
       if (AddRecipeResponse.ok) {
         setAddRecipeError(AddRecipeResponseResult.message);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       } else {
         setAddRecipeError(AddRecipeResponseResult.message);
       }
@@ -137,7 +141,7 @@ const AddRecipe = () => {
               alt="Uploaded Recipe"
             />
           )}
-          {imageError && <p className="error">{imageError}</p>} 
+          {imageError && <p className="error">{imageError}</p>}
         </div>
 
         <div className="recipe-box">
