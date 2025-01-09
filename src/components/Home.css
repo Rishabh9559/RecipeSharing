@@ -61,12 +61,12 @@
 
 .BreakfastSectionTitleBox{
     text-align: center;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     /* border: 1px solid; */
     margin-bottom: 10px;
     padding: 5px;
     border-radius:9px;
-    background-color: rgba(202, 201, 201, 0.334);
+    /* background-color: rgba(202, 201, 201, 0.334); */
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
@@ -82,7 +82,7 @@
 
 .BreakfastSectionImg{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     gap:25px;
     /* border: 1px solid blueviolet; */
     flex-wrap: wrap;
@@ -99,4 +99,11 @@
     width:22vw;
     padding: 5px;
     /* border-radius: 50%; */
+}
+.RecipeName{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top:1px;
+    
+
 }

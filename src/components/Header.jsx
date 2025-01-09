@@ -38,16 +38,16 @@ const Header = () => {
             {isMenuVisible && (
               <ul className="menu">
                 <li className="list">
-                  <Link to="/Food">Breakfast</Link>
+                  <Link to="/Food?category=Breakfast" >Breakfast</Link>
                 </li>
                 <li className="list">
-                  <Link to="/Food">Lunch</Link>
+                  <Link to="/Food?category=Lunch">Lunch</Link>
                 </li>
                 <li className="list">
-                  <Link to="/Food">Snack</Link>
+                  <Link to="/Food?category=Snack">Snack</Link>
                 </li>
                 <li className="list">
-                  <Link to="/Food">Dinner</Link>
+                  <Link to="/Food?category=Dinner">Dinner</Link>
                 </li>
               </ul>
             )}

@@ -1,170 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
-import momo from "../assets/momo.png";
-import panir from "../assets/Panir.jpg";
+
 import { Link } from "react-router-dom";
 
 function Home() {
-  return (
-    <>
-      <div className="HomeContainer">
-        <div>
-          <div className="topRecipeTitle">Top Recipe</div>
 
-          <div className="TopRecipeContainer">
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-            <Link to="/show" className="TopRecipeImgHover">
-              <img className="TopRecipeImg" src={momo} />
-              <div className="TopRecipeName">Momo</div>
-            </Link>
-          </div>
-        </div>
+  const [recipes, setRecipes] = useState({
+      breakfast: [],
+      lunch: [],
+      snack: [],
+      dinner: [],
+    });
+  
+    const fetchRecipes = async (category, limit = 0) => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/Recipe?Category=${category}${
+            limit ? `&limit=${limit}` : ""
+          }`
+        );
+        if (!response.ok) {
+          throw new Error(`Error fetching ${category} recipes`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(error);
+        return [];
+      }
+    };
+  
+    useEffect(() => {
+      const loadRecipes = async () => {
+        const breakfast = await fetchRecipes("Breakfast", 8);
+        const lunch = await fetchRecipes("Lunch", 8);
+        const snack = await fetchRecipes("Snack", 8);
+        const dinner = await fetchRecipes("Dinner", 8);
+  
+        setRecipes({ breakfast, lunch, snack, dinner });
+      };
+  
+      loadRecipes();
+    }, []);
+  
+  
 
-        {/* Brack Fast Recipes  */}
-
+    const RenderRecipeSection = (category, recipes) => {
+      const categoryName = category.replace(" Recipes", "");
+      console.log(category);
+      return (
         <div className="BreakfastSection">
           <div className="BreakfastSectionTitleBox">
-            <div className=" BreakfastSectionTitle">Breakfast Recipe </div>
-            <Link className="SeeMore" to="/Food"> See More</Link>
+            <div className="BreakfastSectionTitle">{category}</div>
+            <Link className="SeeMore" to={`/Food?category=${categoryName}`}>
+              See More
+            </Link>
           </div>
           <div className="BreakfastSectionImg">
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
+            {recipes.map((recipe) => (
+              <Link
+                to={`/show/${recipe._id}`}
+                className="BreakfastImgContainer"
+                key={recipe._id}
+              >
+                <img
+                  className="BreakfastSectionImgSize"
+                  src={recipe.Imageurl}
+                  alt={recipe.RecipeName}
+                />
+                <p className="RecipeName">{recipe.RecipeName}</p>
+              </Link>
+            ))}
           </div>
         </div>
+      );
+    };
+    
 
-        {/* Lunch */}
+    
 
-        <div className="BreakfastSection">
-        <div className="BreakfastSectionTitleBox">
-            <div className=" BreakfastSectionTitle">Lunch Recipe </div>
-            <Link className="SeeMore" to="/Food"> See More</Link>
-          </div>          
-          <div className="BreakfastSectionImg">
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-              <p className="RecipeName"> Panir </p>
-            </Link>
 
-            
-          </div>
-        </div>
+  return (
+    <>
+      <div className="topRecipeTitle">
+      
+        
+     
 
-        {/* Snack */}
+      {RenderRecipeSection("Breakfast Recipes",  recipes.breakfast)}
 
-        <div className="BreakfastSection">
-        <div className="BreakfastSectionTitleBox">
-            <div className=" BreakfastSectionTitle">Snack Recipe </div>
-            <Link className="SeeMore" to="/Food"> See More</Link>
-          </div>          <div className="BreakfastSectionImg">
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
+      { 
+        RenderRecipeSection("Lunch Recipes",  recipes.lunch)
+      }
+      {RenderRecipeSection("Snack Recipes",  recipes.snack)}
+      {RenderRecipeSection("Dinner Recipes", recipes.dinner)}
 
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-          </div>
-        </div>
 
-        {/* dinner */}
 
-        <div className="BreakfastSection">
-        <div className="BreakfastSectionTitleBox">
-            <div className=" BreakfastSectionTitle">Dinner Recipe </div>
-            <Link className="SeeMore" to="/Food"> See More</Link>
-          </div>          <div className="BreakfastSectionImg">
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-            <Link to="/show" className="BreakfastImgContainer">
-              <img className="BreakfastSectionImgSize" src={panir} />
-            </Link>
-          </div>
-        </div>
       </div>
     </>
   );
