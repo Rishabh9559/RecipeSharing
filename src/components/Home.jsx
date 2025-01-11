@@ -59,7 +59,7 @@ function Home() {
           <div className="BreakfastSectionImg">
             {recipes.map((recipe) => (
               <Link
-                to={`/show/${recipe._id}`}
+                to={`/show?_id=${recipe._id}`}
                 className="BreakfastImgContainer"
                 key={recipe._id}
               >

@@ -7,8 +7,8 @@
     
 }
 
-.RecipeName{
-
+.RecipeNames{
+    text-decoration-line: underline;
     padding: 20px;
     font-size: 24px;
 }
@@ -22,11 +22,13 @@
 .RecipeImg{
     width: 30vw;
     height: 50vh;
+    border-radius: 12px;
+    
 }
 
-.RecipeIngredients{
-
-
+.ShowBox{
+    display: flex;
+    gap:25px;
 }
 
 .RecipeIngredients ul {

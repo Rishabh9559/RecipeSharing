@@ -1,0 +1,68 @@
+.ProfileBox{
+    top:0;
+    margin-top: 100px;
+    width:100%;
+    margin-bottom: 50px;
+    
+}
+
+.ProfileDetail{
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.userinfo{
+    display: flex;
+    /* border: 2px solid red; */
+    align-items: center;
+    gap: 50px;
+    
+    
+}
+
+.ProfileImg{
+    width: 100px;
+}
+
+.LogOut{
+    padding: 12px;
+    border: none;
+    background-color: rgba(63, 141, 47, 0.891);
+    border-radius: 9px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.divborder{
+    border:1px solid rgba(226, 221, 221, 0.516);
+
+}
+.PostList{
+    margin-top: 50px;
+    display: flex;
+    gap:25px;
+    flex-wrap: wrap;
+    
+}
+
+.Post{
+    border: 2px solid rgba(187, 185, 185, 0.312);
+    border-radius: 16px;
+}
+.PostImg{
+    height: 35vh;
+    width:22vw;
+    padding: 5px;
+}
+
+.PostName{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top:1px;
+    font-size: 23px;
+}

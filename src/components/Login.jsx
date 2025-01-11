@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const Login = () => {
   const navigate = useNavigate();
   const [ForgotPasswordForm, setForgotPasswordForm] = useState(false);
-  let [ForgotPassword, setForgotPassword] = useState("");
+  let [ForgotPassword, setForgotPassword] = useState(null);
   let [ForgotPasswordError, setForgotPasswordError] = useState("");
   const [LoginForm, setLoginForm] = useState(true);
   const [LoginError, setLoginError] = useState("");

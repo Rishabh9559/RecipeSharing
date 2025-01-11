@@ -40,7 +40,7 @@ const Food = () => {
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <Link
-            to={`/show/${recipe._id}`}
+            to={`/show?_id=${recipe._id}`}
               key={recipe._id}
               className="BreakfastImgContainer"
             >

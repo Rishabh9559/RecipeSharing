@@ -9,6 +9,7 @@ import Signup from "./components/Signup.jsx";
 import Show from "./components/Show.jsx";
 import Food from "./components/Food.jsx";
 import Root from "./Root.jsx";
+import Profile from "./components/Profile.jsx";
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,10 @@ const router = createBrowserRouter([
         path: "Food",
         element: <Food />,
       },
-
+      {
+        path:"Profile",
+        element:<Profile />
+      }
 
     ],
   },
