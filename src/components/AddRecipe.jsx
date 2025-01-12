@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddRecipe.css";
@@ -7,6 +7,33 @@ import { supabase } from "../supabaseClient.js";
 
 const AddRecipe = () => {
   const navigate = useNavigate();
+
+  const [UserID, setUserID] = useState(null);
+
+useEffect(
+  ()=>{
+    const fetchUserID = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/profile", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (!response.ok) {
+          navigate("/Login");
+          throw new Error("Please Login");
+        }
+  
+        const data = await response.json();
+        
+        setUserID(data);
+        // console.log(UserID);
+      } catch (err) {
+        // setAddRecipeError(err.message);
+      }
+    };
+  
+    fetchUserID();
+  } , [] );
 
   const {
     register,
@@ -34,6 +61,7 @@ const AddRecipe = () => {
       setImageError("Please select an image before submitting.");
       return;
     }
+    console.log("user id: ", UserID.UserID);
 
     try {
       const fileName = `${Date.now()}_${image.name}`;
@@ -64,6 +92,7 @@ const AddRecipe = () => {
           Imageurl: imageUrl,
           Ingredients: watch("Ingredients"),
           Instructions: watch("Instructions"),
+          UserID: UserID.UserID,
         }),
       });
 

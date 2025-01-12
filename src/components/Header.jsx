@@ -72,7 +72,7 @@ const Header = () => {
             Add Recipe &#10009;
           </Link>
 
-          <Link to="/Signup" className="profile_container">
+          <Link to="/Profile" className="profile_container">
             <p className="profile" to=" ">
               Profile
             </p>

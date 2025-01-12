@@ -29,11 +29,15 @@ const Login = () => {
           Email: watch("Email", ""),
           Password: watch("Password", ""),
         }),
+        credentials:"include",
       });
       const ResultLoginResponse = await LoginResponse.json();
       if (LoginResponse.ok) {
         console.log("login done", ResultLoginResponse.message);
-        navigate("/");
+        setLoginError(ResultLoginResponse.message);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       } else {
         console.log(ResultLoginResponse.message);
         setLoginError(ResultLoginResponse.message);
